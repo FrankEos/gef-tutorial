@@ -20,23 +20,23 @@ abstract public class AbstractConnectionModel {
         this.target = target;
     }
 
-    public void attchSource() {
+    public void attachSource() {
         if (!source.getModelSourceConnections().contains(this)) {
             source.addSourceConnection(this);
         }
     }
 
-    public void attchTarget() {
+    public void attachTarget() {
         if (!target.getModelTargetConnections().contains(this)) {
             target.addTargetConnection(this);
         }
     }
 
-    public void detachSource() {
+    public void dettachSource() {
         source.removeSourceConnection(this);
     }
 
-    public void detachTarget() {
+    public void dettachTarget() {
         target.removeTargetConnection(this);
     }
 

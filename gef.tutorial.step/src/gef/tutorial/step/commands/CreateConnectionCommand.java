@@ -25,8 +25,8 @@ public class CreateConnectionCommand extends Command {
 
     @Override
     public void execute() {
-        connection.attchSource();
-        connection.attchTarget();
+        connection.attachSource();
+        connection.attachTarget();
     }
 
     public void setConnection(Object model) {
@@ -45,7 +45,7 @@ public class CreateConnectionCommand extends Command {
 
     @Override
     public void undo() {
-        connection.detachSource();
-        connection.detachTarget();
+        connection.dettachSource();
+        connection.dettachTarget();
     }
 }

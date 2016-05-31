@@ -11,7 +11,6 @@ import org.eclipse.gef.requests.CreateRequest;
 
 import gef.tutorial.step.commands.ChangeConstraintCommand;
 import gef.tutorial.step.commands.CreateCommand;
-import gef.tutorial.step.commands.CreateConnectionCommand;
 import gef.tutorial.step.model.HelloModel;
 import gef.tutorial.step.model.LineConnectionModel;
 
