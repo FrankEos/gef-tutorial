@@ -12,6 +12,7 @@ public class CustomDirectEditManager extends DirectEditManager {
 
     private HelloModel helloModel;
 
+    @SuppressWarnings("rawtypes")
     public CustomDirectEditManager(GraphicalEditPart source, Class editorType, CellEditorLocator locator) {
         super(source, editorType, locator);
         helloModel = (HelloModel) source.getModel();

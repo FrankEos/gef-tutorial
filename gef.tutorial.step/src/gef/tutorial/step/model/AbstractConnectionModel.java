@@ -1,7 +1,12 @@
 
 package gef.tutorial.step.model;
 
-abstract public class AbstractConnectionModel {
+import java.util.ArrayList;
+import java.util.List;
+
+import org.eclipse.draw2d.geometry.Point;
+
+abstract public class AbstractConnectionModel extends AbstractModel {
     private HelloModel source, target;
 
     public HelloModel getSource() {
@@ -39,5 +44,33 @@ abstract public class AbstractConnectionModel {
     public void dettachTarget() {
         target.removeTargetConnection(this);
     }
+
+    // bend connection point begin
+    @SuppressWarnings("rawtypes")
+    private List bendpoints = new ArrayList();
+
+    public static final String P_BEND_POINT = "_bend_point";
+
+    @SuppressWarnings("unchecked")
+    public void addBendPoint(int index, Point point) {
+        bendpoints.add(index, point);
+        firePropertyChange(P_BEND_POINT, null, null);
+    }
+
+    @SuppressWarnings("rawtypes")
+    public List getBendpoints() {
+        return bendpoints;
+    }
+
+    public void removeBendpoint(int index) {
+        bendpoints.remove(index);
+        firePropertyChange(P_BEND_POINT, null, null);
+    }
+    
+    @SuppressWarnings("unchecked")
+    public void replaceBendpoint(int index, Point point) {
+        bendpoints.set(index, point);
+    }
+    // bend connection point end
 
 }

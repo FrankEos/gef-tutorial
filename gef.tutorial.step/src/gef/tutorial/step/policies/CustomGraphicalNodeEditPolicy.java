@@ -7,6 +7,7 @@ import org.eclipse.gef.requests.CreateConnectionRequest;
 import org.eclipse.gef.requests.ReconnectRequest;
 
 import gef.tutorial.step.commands.CreateConnectionCommand;
+import gef.tutorial.step.commands.ReconnectConnectionCommand;
 
 public class CustomGraphicalNodeEditPolicy extends GraphicalNodeEditPolicy {
 
@@ -30,15 +31,23 @@ public class CustomGraphicalNodeEditPolicy extends GraphicalNodeEditPolicy {
     }
 
     @Override
-    protected Command getReconnectSourceCommand(ReconnectRequest arg0) {
-        // TODO Auto-generated method stub
-        return null;
+    protected Command getReconnectSourceCommand(ReconnectRequest request) {
+        ReconnectConnectionCommand command = new ReconnectConnectionCommand();
+        command.setConnectionModel(request.getConnectionEditPart().getModel());
+
+        command.setNewSource(getHost().getModel());
+
+        return command;
     }
 
     @Override
-    protected Command getReconnectTargetCommand(ReconnectRequest arg0) {
-        // TODO Auto-generated method stub
-        return null;
+    protected Command getReconnectTargetCommand(ReconnectRequest request) {
+        ReconnectConnectionCommand command = new ReconnectConnectionCommand();
+        command.setConnectionModel(request.getConnectionEditPart().getModel());
+
+        command.setNewTarget(getHost().getModel());
+
+        return command;
     }
 
 }

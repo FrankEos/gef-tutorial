@@ -14,7 +14,7 @@ public class HelloModel extends AbstractModel {
 
     public static final String P_TEXT = "_text";
 
-    private String text = "Hello World";
+    private String text = "node";
 
     private Rectangle constraint;
 
